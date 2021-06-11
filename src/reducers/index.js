@@ -17,7 +17,7 @@ const reducer = (state=initialState, action)=>{
         return({
             ...state,
             isLoading: false,
-            smurfs: [...state.smurfs, action.payload]
+            smurfs: action.payload
         })
     case FETCH_FAIL:
         return({
@@ -26,16 +26,16 @@ const reducer = (state=initialState, action)=>{
             errorMessage: action.payload
         })
     case ADD_SMURF:
-        let newSmurf = {
-            id: action.payload.id,
-            name: action.payload.name,
-            position: action.payload.position,
-            nickname: action.payload.nickname,
-            description: action.payload.description
-        }
+        // let newSmurf = {
+        //     id: action.payload.id,
+        //     name: action.payload.name,
+        //     position: action.payload.position,
+        //     nickname: action.payload.nickname,
+        //     description: action.payload.description
+        // }
         return({
             ...state,
-            smurfs: [...state.smurfs, newSmurf]
+            smurfs: [...state.smurfs, action.payload]
         })
     case ERROR:
         return({

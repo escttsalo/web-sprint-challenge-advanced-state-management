@@ -29,7 +29,7 @@ export const fetchFail = error => {
 export const addSmurf = smurf => {
     return{type:ADD_SMURF, payload: smurf}
 }
-export const error = err => {
+export const setError = err => {
     return{type: ERROR, payload: err}
 }
 //Task List:
